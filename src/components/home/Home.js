@@ -1,8 +1,12 @@
 import React from 'react'
 import './Home.css'
-import product from './Product'
-import Product from './Product'
+import Product from '../product/Product'
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import rootReducer from '../reducer/rootReducer'
+
 function Home() {
+    
     const products = [ {
         id : "123412",
         title : "Echo Dot (4th Gen, 2020 release)| #1 smart spe… AmazonAmazon",
@@ -41,7 +45,11 @@ function Home() {
     }
 ]
 
+    const store = createStore(rootReducer);
+
+
     return (
+        <Provider store = {store} >
         <div className ="home" >
             <img 
             className = "home__image"
@@ -53,10 +61,12 @@ function Home() {
             <div className="home__row">
                 {/* loop over product array using map function and pass object to product component using props} */}
                 {
+                
                     products.map( product1 =>
                         (
                         <Product title = {product1.title} price = {product1.price} image = {product1.image} />
                         ))
+                
                 }
             </div>
             <div className="home__row">
@@ -75,6 +85,7 @@ function Home() {
             
             {/* products */}
         </div>
+        </Provider>
     )
 }
 

@@ -1,16 +1,19 @@
 import React from 'react';
 import { useState } from "react";
 import './Product.css';
-import Header from './Header'
 import StarRateIcon from "@material-ui/icons/StarRate";
+import { useSelector, useDispatch  } from 'react-redux'
 
 function Product( { id, title, price, rating, image} ) {
 
-    const [num, setNum] =  useState(0);
+//     const [num, setNum] =  useState(0);
 
-    const incNum = () => {
-        setNum(num+1);
-    }
+//     const incNum = () => {
+//         setNum(num+1);
+//     }
+
+const counter = useSelector (state => state.counter);
+const dispatch = useDispatch();
     
 
 
@@ -27,7 +30,7 @@ function Product( { id, title, price, rating, image} ) {
                     {
                         Array(rating)
                         .fill().map( (_) => (
-                            <p><StarRateIcon / ></p> 
+                            <p><StarRateIcon /></p> 
                         ) )
                     }
                 </div>    
@@ -37,8 +40,9 @@ function Product( { id, title, price, rating, image} ) {
                 alt = ""
             />
             
-            <button onClick = {incNum} >  Add to Basket</button>
-            <p> {num} </p>
+            <button onClick = { (() => dispatch({type:"INCREMENT"})) } >  Add to Basket</button>
+            <button onClick = { (() => dispatch({type:"DECREMENT"})) } >  Delete to Basket</button>
+            <p> {counter} </p>
                     
         </div>
         

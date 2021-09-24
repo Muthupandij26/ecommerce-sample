@@ -1,16 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import "./Header.css";
-import { useState } from 'react';
 import SearchIcon from "@material-ui/icons/Search"
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
-import Product from './Product'
 
 function Header() {
 
 
 
-    return (
+    return ( 
         <nav className = "header">
             {/* logo on the logo */}
             <Link to = "/"> 

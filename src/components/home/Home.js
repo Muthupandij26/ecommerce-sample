@@ -7,37 +7,41 @@ import rootReducer from '../reducer/rootReducer'
 
 function Home() {
     
-    const products = [ {
-        id : "123412",
+ const products = [ {
+        id : "1",
         title : "Echo Dot (4th Gen, 2020 release)| #1 smart spe… AmazonAmazon",
         price : 4500 ,
         rating : 5,
-        image : "https://techcrunch.com/wp-content/uploads/2016/09/alexa-family-shot.jpg?w=730&crop=1"
+        image : "https://techcrunch.com/wp-content/uploads/2016/09/alexa-family-shot.jpg?w=730&crop=1",
+        quantity: 0
     },
     {
-        id : "123412",
+        id : "2",
         title : "Redmi 9A (Nature Green, 2GB RAM, 32GB Storage) | 2GHz Octa-core Helio G25 Processor | 5000 mAh Battery",
         price : 10000,
         rating : 5,
-        image : "https://m.media-amazon.com/images/I/71sxlhYhKWL._SY606_.jpg"
+        image : "https://m.media-amazon.com/images/I/71sxlhYhKWL._SY606_.jpg",
+        quantity: 0
     },
 ]
     const products2 = [ {
-        id : "123412",
+        id : "3",
         title : "Sample images",
         price : 4500 ,
         rating : 5,
-        image : "https://cdn.pixabay.com/photo/2014/05/02/21/49/laptop-336373__340.jpg"
+        image : "https://cdn.pixabay.com/photo/2014/05/02/21/49/laptop-336373__340.jpg",
+        quantity: 0
     },
     {
-        id : "123412",
+        id : "4",
         title : "Sample images",
         price : 10000,
         rating : 5,
-        image : "https://techcrunch.com/wp-content/uploads/2016/09/alexa-family-shot.jpg?w=730&crop=1"
+        image : "https://techcrunch.com/wp-content/uploads/2016/09/alexa-family-shot.jpg?w=730&crop=1",
+        quantity: 0
     },
     {
-        id : "123412",
+        id : "5",
         title : "Sample images",
         price : 10000,
         rating : 5,
@@ -64,7 +68,7 @@ function Home() {
                 
                     products.map( product1 =>
                         (
-                        <Product title = {product1.title} price = {product1.price} image = {product1.image} />
+                        <Product id = {product1.id} title = {product1.title} price = {product1.price} image = {product1.image} quantity = {product1.quantity} />
                         ))
                 
                 }

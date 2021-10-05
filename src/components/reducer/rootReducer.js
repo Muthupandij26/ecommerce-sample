@@ -1,3 +1,6 @@
+import Product from '../product/Product'
+import { Home } from '../home/Home'
+
 const initialState = {
     counter: 0
 }
@@ -5,8 +8,16 @@ const initialState = {
 function rootReducer (state = initialState, action)
 {
     switch (action.type) {
-        case 'INCREMENT' :
-            return { counter : state.counter + 1 }
+        case 'INCREMENT' :  
+            if( 1 == action.payload) 
+            {
+                return { counter : state.counter + 1 }
+            }
+            else {
+                return {counter:0}
+            }
+
+            
         case 'DECREMENT' :
             return { counter : state.counter - 1 }
         default :
@@ -14,4 +25,4 @@ function rootReducer (state = initialState, action)
     }
 }
 
-export default rootReducer
+export default rootReducer 
